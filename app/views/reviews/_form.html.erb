@@ -1,0 +1,20 @@
+<%= form_for([@movie, @review]) do |f| %>
+<%= render "shared/errors", :object => @review %>
+<fieldset>
+  <ol>
+    
+    <li class="required">
+      <%= f.label :stars %>
+      <%= f.select :stars, (1..5), :prompt => "Pick One" %>
+    </li>
+    <li class="required">
+      <%= f.label :comment %>
+      <%= f.text_area :comment, :cols => 40, :rows => 7 %>
+    </li>
+  </ol>
+  <p>
+    <%= f.submit "Post Review" %>
+    <%= link_to "Cancel", movies_path, :class => "button" %>
+  </p>
+</fieldset>
+<% end %>

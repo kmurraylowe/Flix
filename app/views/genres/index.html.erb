@@ -1,0 +1,16 @@
+<header id="content-header">
+  <h1>Genres</h1>
+</header>
+
+<ol id="genres">
+  <% @genres.each do |genre| %>
+    <li>
+      <span><%= link_to genre.name, genre %></span>
+      <span><%= pluralize(genre.movies.count, 'movie') %></span>
+      | <%= link_to "delete", genre_path(genre), method: :delete, data: { confirm: "Are you sure?" }  %>
+      | <%= link_to "update", edit_genre_path(genre) %> </li>
+  <% end %>
+</ol>
+
+<h2>Add Genre</h2>
+<%= render 'form' %>

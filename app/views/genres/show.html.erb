@@ -1,0 +1,10 @@
+<article id="genre" class="genre">
+  <header>
+    <h1><%= @genre.name.pluralize %></h1>
+  </header>
+  <ul>
+    <% @genre.movies.each do |movie| %>
+      <li><%= link_to movie.title, movie %></li>
+    <% end %>
+  </ul>
+</article>

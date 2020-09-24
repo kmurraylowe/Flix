@@ -1,0 +1,14 @@
+<header id="content-header">
+  <h1>Editing Review:</h1>
+</header>
+
+<%= render 'form' %>
+
+
+<section class="admin">
+  <%= link_to "Delete", movie_review_path(@movie, @review),
+                      :class => "button",
+                      :method => :delete,
+                      :data => {:confirm => "Are you sure?"}
+   %>
+   </section>
